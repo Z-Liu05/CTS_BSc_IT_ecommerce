@@ -5,14 +5,16 @@
 
     <div class="row">
 
+        @foreach ($product_data as $data)
         <div class="col-md-4">
-            <img style="width: 200px; height: 200px" src="storage/images/products/iphone1-1.jpg" alt="image">
-            <p>Iphone 32</p>
-            <p>$500.00</p>
-            <p><a href="#">View</a></p>
+
+            <img style="width: 200px; height: 200px" src="{{ $data->getImage() }}" alt="image">
+            <p>{{$data->title}}</p>
+            <p>${{$data->getPrice() }}</p>
+            <p><a href="#"{{$data->getLink()}}">View</a></p>
             <p><a href="#">Add to cart</a></p>
         </div>
-
+        @endforeach
     </div>
 
 
