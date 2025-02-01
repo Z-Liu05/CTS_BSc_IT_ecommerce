@@ -4,7 +4,6 @@
     <h1>Details Page</h1>
 
     <div class="row">
-
         <div class="col-md-4">
             <img style="width: 200px; height: 200px" src="{{ $data->getImage() }}" alt="image">
             <p>{{ $data->title }}</p>

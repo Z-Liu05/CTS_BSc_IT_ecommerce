@@ -11,8 +11,8 @@
             <img style="width: 200px; height: 200px" src="{{ $data->getImage() }}" alt="image">
             <p>{{$data->title}}</p>
             <p>${{$data->getPrice() }}</p>
-            <p><a href="#"{{$data->getLink()}}">View</a></p>
-            <p><a href="#">Add to cart</a></p>
+            <p><a href="{{ $data->getLink() }}">View</a></p>
+            <p><a href="{{ route('cart.addfromstorepage', ['id' => $data->id]) }}">Add to cart</a></p>
         </div>
         @endforeach
     </div>

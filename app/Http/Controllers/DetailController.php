@@ -13,8 +13,8 @@ class DetailController extends Controller
         $group_ids = Auth::check() ? Auth::user()->getGroups() : [1];
 
         // Return specific prodcut price
-        $product_data = Product::singleProduct($id)->withPrices()->get()->first();
+        $data = Product::singleProduct($id)->withPrices()->get()->first();
 
-        return view('pages.testing.detailspage', compact('product_data'));
+        return view('pages.testing.detailspage', compact('data'));
     }
 }
