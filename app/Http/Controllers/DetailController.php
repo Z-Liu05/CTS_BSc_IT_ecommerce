@@ -16,6 +16,6 @@ class DetailController extends Controller
         // Return specific prodcut price
         $data = Product::singleProduct($id)->withPrices()->get()->first();
 
-        return view('pages.testing.detailspage', compact('data'));
+        return view('pages.default.detailspage', compact('data'));
     }
 }

@@ -17,6 +17,6 @@ class ProductController extends Controller
         // Return prodcut price
         $product_data = Product::withPrices()->get();
 
-        return view('pages.testing.productspage', compact('product_data'));
+        return view('pages.default.productspage', compact('product_data'));
     }
 }
