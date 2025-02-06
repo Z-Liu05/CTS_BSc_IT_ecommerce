@@ -12,6 +12,7 @@ class DetailController extends Controller
         // Verify user and group
         $group_ids = Auth::check() ? Auth::user()->getGroups() : [1];
 
+        $user = Auth::user();
         // Return specific prodcut price
         $data = Product::singleProduct($id)->withPrices()->get()->first();
 
