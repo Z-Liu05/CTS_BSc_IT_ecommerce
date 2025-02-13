@@ -1,3 +1,8 @@
 <div>
-    <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
+    <x-mylayouts.layout-default>
+
+        <h1>Checkout Page</h1>
+        <x-core.stripe-ui />
+
+    </x-mylayouts.layout-default>
 </div>
