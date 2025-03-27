@@ -30,6 +30,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+        // Update if item exist if it doesn't create it
         Cart::updateOrCreate(
             ['user_id' => Auth::id(), 'product_id' => $request->product_id],
             ['quantity' => DB::raw('quantity + '.$request->quantity), 'updated_at' => now()]
