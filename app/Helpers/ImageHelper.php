@@ -24,6 +24,10 @@ class ImageHelper
         $this->disk = $disk;
     }
 
+    /**
+     * This function is responsible for uploading image
+     *
+     */
     public function imageUpload($file)
     {
         // Hash name
@@ -40,10 +44,14 @@ class ImageHelper
         return Storage::disk($this->disk)->exists($filename);
     }
 
+    /**
+     * Deletes the existing image of a product
+     *
+     */
     public function removeExistingImage($filename){
         if ($this->fileExist($filename)) {
             // NOTE::FOR TESTING, DO NOT REMOVE PREVIOUS IMAGE
-            // Storage::disk('products')->delete($oldfilename);
+            // Storage::disk('products')->delete($filename);
             return true;
         }
 

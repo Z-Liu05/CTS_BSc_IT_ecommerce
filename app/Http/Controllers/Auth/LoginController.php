@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -25,8 +27,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
 
+    public function authenticated(Request $request, $user){
+        if(Auth::user()->role == 'admin'){
+            return redirect()->route('admin.products.index')->with('message', 'Welcome to the admin dashboard');
+        }else{
+            return redirect()->route('home')->with('message', 'Welcome');
+        }
+    }
     /**
      * Create a new controller instance.
      *

@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Helpers\ImageHelper;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Helpers\ImageHelper;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
 class AdminProductController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * This funciton is responsible for retrieving all of the product information from the database
+     * Information is passed through a view to display
+     * This is where admin can view all products available on app
      */
     public function index()
     {
@@ -21,19 +26,27 @@ class AdminProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new product.
      */
     public function create()
     {
+        return view('admin.default.products.admin-add-products');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created product in database.
+     *
+     * This function is for creation and validation of data to the database
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
+        $validatedData = $request->validated();
+        $imageHelper = new ImageHelper();
+        $validatedData['image_path'] = '/images/products/';
+        $validatedData['image_name'] = $imageHelper->imageUpload($request->file('image_upload'));
+        Product::create($validatedData);
+        return redirect()->route('admin.products.index')->with('message', 'Product created successfully');
     }
-
     /**
      * Display the specified resource.
      */
@@ -53,6 +66,8 @@ class AdminProductController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * Validate and update the product information in the database
      */
     public function update(UpdateProductRequest $request, string $id)
     {
