@@ -16,7 +16,7 @@
     @if($points_helper->isDiscountApplied())
     <p>Discounted Total:
 
-        ${{ CustomHelper::calculateDiscountedPrice(
+        ${{ app('CustomHelper')->calculateDiscountedPrice(
         $cart_data->getSubtotal(),
         $points_helper->getPointsDiscountApplied()
         ) }}

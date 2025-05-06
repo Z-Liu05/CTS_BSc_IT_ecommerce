@@ -106,12 +106,22 @@
                                 </p>
                                 <p class="d-flex">
                                     <span>Discount</span>
-                                    <span>$3.00</span>
+                                    <span>$0.00</span>
                                 </p>
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
+
+
+                                    @if ($points_helper->isDiscountApplied())
+                                    <span><s>${{ app('CustomHelper')->formatPrice($cart_data->getTotal())
+                                            }}</s></span>
+                                    <span>${{
+                                        app('CustomHelper')->formatPrice($points_helper->calculateDiscountedPrice())
+                                        }}</span>
+                                    @else
                                     <span>${{ app('CustomHelper')->formatPrice($cart_data->getTotal()) }}</span>
+                                    @endif
                                 </p>
                             </div>
                         </div>
