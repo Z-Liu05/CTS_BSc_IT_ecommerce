@@ -39,7 +39,7 @@ class ProductFactory extends Factory
     {
         // Custom disk: config/filesystems.php - images
         // load images
-        $images = Storage::disk('images')->files();
+        $images = Storage::disk('products')->files();
 
         if (empty($images)) {
             return 'no_image.jpg';

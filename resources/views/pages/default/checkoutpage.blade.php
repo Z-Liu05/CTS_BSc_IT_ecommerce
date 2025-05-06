@@ -90,7 +90,7 @@
                         </div>
                     </form><!-- END -->
 
-
+                    @include('pages.additional.points.points-exchange-default')
 
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-6 d-flex">
