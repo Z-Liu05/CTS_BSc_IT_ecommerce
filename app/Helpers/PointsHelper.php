@@ -38,6 +38,7 @@ class PointsHelper
             }])
         ->where('start_date','<=',Carbon::now())
         ->where('expiry_date','>',Carbon::now())
+        ->orderBy('points_per_dollar', 'desc')
         ->get();
 
             $this->base_points = $points_data[0]->points_per_dollar;
@@ -56,23 +57,23 @@ class PointsHelper
                 return 'You do not have enough points';
             }
 
-            $reward = PointsDiscount::where('points_needed',$points_exchanged)->first();
+            $reward = PointsDiscount::where('points_needed', $points_exchanged)->first();
             session(['points_discount_applied'=> $reward->discount_percent]);
-            session(['points_exhanged'=> $reward->points_needed]);
+            session(['points_exchanged'=> $reward->points_needed]);
 
             return 'Discount Applied';
         } catch (\Throwable $th) {
             // throw $th;
             session()->forget('points_discount_applied');
-            session()->forget('points_exhanged');
+            session()->forget('points_exchanged');
             return 'Discount Removed';
         }
     }
 
-    public function clearPointsSession()
+    public static function clearPointsSession()
     {
         session()->forget('points_discount_applied');
-        session()->forget('points_exhanged');
+        session()->forget('points_exchanged');
     }
 
     public function isDiscountApplied()

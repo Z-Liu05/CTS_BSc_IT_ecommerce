@@ -119,13 +119,12 @@ class StripeCheckout
             try{
 
                 $reward = PointsDiscount::where('points_needed', $points_exchanged)->first();
-
-                $stripe_coupon = $this->stripe->coupon->retrieve($reward->stripe_discount_id,[]);
+                $stripe_coupon = $this->stripe->coupons->retrieve($reward->stripe_discount_id, []);
                 $this->coupon_used = true;
                 $this->stripe_checkout_data['discounts'] = [['coupon' => $reward->stripe_discount_id]];
 
             }
-            catch(Throwable $th){
+            catch(\Throwable $th){
                 throw $th;
             }
         }

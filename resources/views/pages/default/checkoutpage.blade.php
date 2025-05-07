@@ -111,18 +111,26 @@
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
-
-
-                                    @if ($points_helper->isDiscountApplied())
-                                    <span><s>${{ app('CustomHelper')->formatPrice($cart_data->getTotal())
-                                            }}</s></span>
-                                    <span>${{
-                                        app('CustomHelper')->formatPrice($points_helper->calculateDiscountedPrice())
-                                        }}</span>
-                                    @else
-                                    <span>${{ app('CustomHelper')->formatPrice($cart_data->getTotal()) }}</span>
-                                    @endif
+                                    <span>
+                                        <strong>
+                                            @if ($points_helper->isDiscountApplied())
+                                            ${{
+                                            app('CustomHelper')->formatPrice($points_helper->calculateDiscountedPrice())
+                                            }}
+                                            @else
+                                            ${{ app('CustomHelper')->formatPrice($cart_data->getTotal()) }}
+                                            @endif
+                                        </strong>
+                                    </span>
                                 </p>
+
+                                @if ($points_helper->isDiscountApplied())
+                                <p class="text-success mt-2">
+                                    <strong>{{ $points_helper->getPointsExhanged() }} points used.</strong>
+                                    You saved ${{
+                                    app('CustomHelper')->formatPrice($points_helper->getPointsDiscountApplied()) }}!
+                                </p>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6">

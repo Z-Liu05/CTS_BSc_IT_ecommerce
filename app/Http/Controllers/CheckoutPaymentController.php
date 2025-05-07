@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\OrderProduct;
 use App\Helpers\PointsHelper;
 use App\Helpers\ShippingHelper;
 use App\Helpers\StripeCheckout;
-use App\Models\Order;
-use App\Models\OrderProduct;
 use Illuminate\Support\Facades\Auth;
 
 class CheckoutPaymentController extends Controller
