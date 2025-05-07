@@ -9,7 +9,7 @@ use App\Models\User;
 class StripeCheckoutSuccess
 {
     protected $stripe;
-
+    public int $points_gained = 0;
     public function __construct()
     {
         $this->stripe = StripeClient::getClient();
@@ -31,9 +31,12 @@ class StripeCheckoutSuccess
 
         $order_completed_data = $stripe_helper->getOrderCompletedData($session);
 
+        $this->points_gained = $order->points_gained;
+
         // Get shipping id from database
         if ($order && $order->payment_status == 'unpaid') {
             $user_id = $order->user_id;
+            //$user = User::where('id', $user_id)->first();
             $user = User::where('id', $user_id)->first();
 
             $shipping_id = Shipping::where('stripe_id', $order_completed_data['stripe_id'])
@@ -46,6 +49,10 @@ class StripeCheckoutSuccess
             $order->shipping_id = $shipping_id;
             $order->payment_status = 'paid';
 
+            if(!$this->updatePoints($order, $user)){
+                return false;
+            }
+
             $order->save();
 
             // @requires remove comment b4 demo
@@ -53,6 +60,19 @@ class StripeCheckoutSuccess
 
             return true;
         }
+
+        return true;
+    }
+
+    public function updatePoints(Order $order, User $user){
+        if($order->points_exchanged > $user->total_points){
+            return false;
+        }
+
+        $this->points_gained = $order->points_gained;
+        User::subtractPoints($user->id, $order->points_exchanged)->get();
+        User::addPoints($user->id, $order->points_gained)->get();
+        PointsHelper::clearPointsSession();
 
         return true;
     }

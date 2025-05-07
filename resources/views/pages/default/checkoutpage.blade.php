@@ -90,7 +90,7 @@
                         </div>
                     </form><!-- END -->
 
-
+                    @include('pages.additional.points.points-exchange-default')
 
                     <div class="row mt-5 pt-3 d-flex">
                         <div class="col-md-6 d-flex">
@@ -106,13 +106,31 @@
                                 </p>
                                 <p class="d-flex">
                                     <span>Discount</span>
-                                    <span>$3.00</span>
+                                    <span>$0.00</span>
                                 </p>
                                 <hr>
                                 <p class="d-flex total-price">
                                     <span>Total</span>
-                                    <span>${{ app('CustomHelper')->formatPrice($cart_data->getTotal()) }}</span>
+                                    <span>
+                                        <strong>
+                                            @if ($points_helper->isDiscountApplied())
+                                            ${{
+                                            app('CustomHelper')->formatPrice($points_helper->calculateDiscountedPrice())
+                                            }}
+                                            @else
+                                            ${{ app('CustomHelper')->formatPrice($cart_data->getTotal()) }}
+                                            @endif
+                                        </strong>
+                                    </span>
                                 </p>
+
+                                @if ($points_helper->isDiscountApplied())
+                                <p class="text-success mt-2">
+                                    <strong>{{ $points_helper->getPointsExhanged() }} points used.</strong>
+                                    You saved ${{
+                                    app('CustomHelper')->formatPrice($points_helper->getPointsDiscountApplied()) }}!
+                                </p>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-6">

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\PointsHelper;
+use App\Models\points\PointsDiscount;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
@@ -25,6 +28,14 @@ class CheckoutController extends Controller
 
         $cart_data->calculateSubtotal();
 
-        return view('pages.default.checkoutpage', compact('cart_data'));
+        $points_helper = new PointsHelper($cart_data->getSubtotal(),$user->total_points, $group_ids);
+        $discount_data = PointsDiscount::all();
+
+        return view('pages.default.checkoutpage', compact('cart_data','points_helper','discount_data'));
+    }
+
+    public function points(Request $request){
+        $message = PointsHelper::exchangePoints($request->points_exchanged);
+        return redirect()->route('checkout.index')->with('message',$message);
     }
 }
