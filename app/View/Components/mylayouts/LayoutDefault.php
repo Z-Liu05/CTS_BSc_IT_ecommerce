@@ -13,7 +13,7 @@ class LayoutDefault extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($title = "Ecommerce", $hideBanner = false)
+    public function __construct($title = "Pear Technology", $hideBanner = false)
     {
         $this->title = $title;
         $this->hideBanner = $hideBanner;

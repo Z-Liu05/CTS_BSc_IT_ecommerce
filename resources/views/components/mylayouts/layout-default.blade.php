@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Minishop - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Pear Technology</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{  asset('template_default/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{  asset('template_default/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{  asset('template_default/css/style.css') }}">
+    <link rel="stylesheet" href="{{  asset('resources/css/app.css') }}">
 </head>
 
 <body class="goto-here">
@@ -56,7 +57,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home.index') }}">Minishop</a>
+            <a class="navbar-brand" href="{{ route('home.index') }}">Pear Technology</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -95,7 +96,6 @@
                     @endif
                     @endauth
 
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 
 
                     @guest
@@ -164,8 +164,8 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Minishop</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+                        <h2 class="ftco-heading-2">Pear Technology</h2>
+                        <p>At Pear Technology, we're shaping the future of mobile technology, one bite at a time.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
