@@ -35,7 +35,7 @@
 
 <body class="goto-here">
     {{-- START nav --}}
-    <div class="py-1 bg-black">
+    {{-- <div class="py-1 bg-black">
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
                 <div class="col-lg-12 d-block">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
@@ -122,7 +122,9 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Shop</span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home.index') }}">Home</a></span>
+                        <span class="mr-2"><a href="{{ route('store.index') }}">Shop</span>
+                    </p>
                     <h1 class="mb-0 bread">{{ $title }}</h1>
                 </div>
             </div>
@@ -136,7 +138,9 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Shop</span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home.index') }}">Home</a></span>
+                        <span class="mr-2"><a href="{{ route('store.index') }}">Shop</span>
+                    </p>
                     <h1 class="mb-0 bread">Shop</h1>
                 </div>
             </div>

@@ -7,6 +7,15 @@ use Illuminate\Support\Facades\Auth;
 
 class DetailController extends Controller
 {
+    /**
+     * Display a single resource
+     *
+     * This method retrieves a product form the products table based on an ID
+     * The information is then passed on to the details page
+     *
+     * @param [type] $id
+     * @return detailspage
+     */
     public function index($id)
     {
         // Verify user and group

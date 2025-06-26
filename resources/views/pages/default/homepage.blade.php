@@ -17,10 +17,21 @@
                             <div class="text">
                                 <span class="subheading">Pear Technology</span>
                                 <div class="horizontal">
-                                    <h3 class="vr" style="background-image: url('images/divider.jpg');">Stablished Since
+                                    <h3 class="vr" style="background-image: url('images/divider.jpg');">Esstablished
+                                        Since
                                         2015</h3>
-                                    <img src="/pear1.jpg" alt="Product image" style="width:150px; height:auto;">
-                                    <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover Now</a></p>
+                                    <div
+                                        class="col-sm-50 col-md-50 col-lg-10 ftco-animate d-flex fadeInUp ftco-animated">
+                                        <div class="product d-flex flex-column">
+                                            <a href="{{ route('store.index') }}" class="img-prod"><img class="img-fluid"
+                                                    src="http://localhost:8000/storage/images/products/pear1.jpg"
+                                                    alt="Colorlib Template">
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <p><a href="{{ route('store.index') }}" class="btn btn-primary px-5 py-3 mt-3">Shop
+                                            Now</a></p>
                                 </div>
                             </div>
                         </div>
@@ -40,12 +51,18 @@
                             data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
                                 <span class="subheading">Pear Technology</span>
-                                <div class="horizontal">
-                                    <h1 class="mb-4 mt-3">A Thouroughly <span>Modern</span> Look</h1>
-                                    <img src="BSc IT L6\Undergraduate Project\ecommerece web\CTS_BSc_IT_ecommerce\pear1.jpg"
-                                        alt="Product image" style="width:150px; height:auto;">
-                                    <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Shop Now</a></p>
+                                <div class="col-sm-50 col-md-50 col-lg-8 ftco-animate d-flex fadeInUp ftco-animated">
+                                    <div class="product d-flex flex-column">
+                                        <a href="{{ route('store.index') }}" class="img-prod"><img class="img-fluid"
+                                                src="http://localhost:8000/storage/images/products/pearphone1-4.jpg"
+                                                alt="Colorlib Template">
+                                        </a>
+
+                                    </div>
+
                                 </div>
+                                <p><a href="{{ route('store.index') }}" class="btn btn-primary px-5 py-3 mt-3">Shop
+                                        Now</a></p>
                             </div>
                         </div>
                     </div>
@@ -128,7 +145,7 @@
                 <div class="col-md-4 py-md-5 ftco-animate">
                     <div class="text py-3 py-md-5">
                         <h2 class="mb-4">Latest Model</h2>
-                        <p><a href="#" class="btn btn-white px-4 py-3">Shop now</a></p>
+                        <p><a href="{{ route('store.index') }}" class="btn btn-white px-4 py-3">Shop now</a></p>
                     </div>
                 </div>
             </div>
