@@ -4856,6 +4856,11 @@ input[type="button"].btn-block {
     justify-content: space-between;
 }
 
+.login-background {
+    background: red !important;
+    min-height: 100vh;
+}
+
 .navbar-brand {
     display: inline-block;
     padding-top: 0.3125rem;
@@ -13176,6 +13181,19 @@ h5,
     .nav-pills .nav-link {
         width: 100%;
     }
+}
+
+.fade-edges {
+    -webkit-mask-image: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 1) 60%,
+            rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 1) 60%,
+            rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-size: cover;
 }
 
 .nav-pills .nav-link:hover {

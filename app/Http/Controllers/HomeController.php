@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.default.homepage');
+        // Verify user and group
+        $group_ids = Auth::check() ? Auth::user()->getGroups() : [1];
+        // Return product price
+
+        $product_data = Product::withPrices()->get();
+        return view('pages.default.homepage', compact('product_data'));
     }
 }

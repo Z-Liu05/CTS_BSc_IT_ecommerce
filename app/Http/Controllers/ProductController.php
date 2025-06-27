@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         // Verify user and group
         $group_ids = Auth::check() ? Auth::user()->getGroups() : [1];
-        // Return prodcut price
+        // Return product price
         $product_data = Product::withPrices()->get();
 
         return view('pages.default.productspage', compact('product_data'));
