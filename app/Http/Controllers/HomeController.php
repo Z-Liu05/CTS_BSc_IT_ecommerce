@@ -31,4 +31,5 @@ class HomeController extends Controller
         $product_data = Product::withPrices()->get();
         return view('pages.default.homepage', compact('product_data'));
     }
+
 }

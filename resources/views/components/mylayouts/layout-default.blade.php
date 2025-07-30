@@ -65,6 +65,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item"><a href="{{ route('home.index') }}" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="{{ route('store.index') }}" class="nav-link">Shop</a></li>
 

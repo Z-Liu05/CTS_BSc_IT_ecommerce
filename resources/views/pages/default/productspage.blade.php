@@ -6,6 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-10 order-md-last">
+
                     <div class="row">
 
 
@@ -78,6 +79,16 @@
 
                 <div class="col-md-4 col-lg-2">
                     <div class="sidebar">
+                        <div class="sidebar-box-2">
+                            <form id="search-form" class="mb-4">
+                                <div class="input-group">
+                                    <input type="text" id="search-input" class="form-control"
+                                        placeholder="Search products...">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
+                            </form>
+
+                        </div>
                         <div class="sidebar-box-2">
                             <h2 class="heading">Categories</h2>
                             <div class="fancy-collapse-panel">
