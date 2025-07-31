@@ -19,16 +19,4 @@ class ProductController extends Controller
 
         return view('pages.default.productspage', compact('product_data'));
     }
-
-    public function search()
-    {
-        $search = request('search'); // Use the global helper instead of injecting Request
-
-        $product_data = Product::withPrices()
-            ->where('title', 'like', "%{$search}%")
-            ->orWhere('category', 'like', "%{$search}%")
-            ->get();
-
-        return view('partials.product-list', compact('product_data'))->render();
-    }
 }
