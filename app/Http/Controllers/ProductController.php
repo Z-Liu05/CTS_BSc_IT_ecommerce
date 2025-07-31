@@ -21,7 +21,8 @@ class ProductController extends Controller
         // Return product price
         $product_data = Product::withPrices()->get();
         $product_data = ProductFilter::withPrices()->filter($values)->get();
+        $category_data = Product::distinct('category')->pluck('category');
 
-        return view('pages.default.productspage', compact('product_data'));
+        return view('pages.default.productspage', compact('product_data', 'category_data'));
     }
 }

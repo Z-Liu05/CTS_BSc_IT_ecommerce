@@ -24,7 +24,7 @@ class ProductFactory extends Factory
             'title' => 'Pear Phone ' . fake()->numberBetween(1, 10),
             'short_description' => fake()->text(200),
             'full_description' => fake()->text(500),
-            'price' => fake()->numberBetween(300, 500),
+            'price' => fake()->numberBetween(300, 600),
             'quantity' => 50,
             'image_path' => '/images/products/',
             'image_name' => $this->randomImage(),

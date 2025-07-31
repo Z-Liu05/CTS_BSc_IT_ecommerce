@@ -26,7 +26,7 @@ class ProductFilter extends Product
         ->priceGreaterThan($values['greater_than'] ?? '')
         ->priceLowerThan($values['lower_than'] ?? '')
         ->categoryFor($values['category'] ?? '')
-        ->sortBy($values['search'] ?? 'id');
+        ->sortBy($values['sort'] ?? 'id');
     }
 
 
