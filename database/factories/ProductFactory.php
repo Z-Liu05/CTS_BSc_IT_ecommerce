@@ -21,7 +21,7 @@ class ProductFactory extends Factory
         $categories = ['white', 'black', 'silver', 'gold'];
 
         return [
-            'title' => Str::ucfirst(fake()->unique()->words(6, true)),
+            'title' => 'Pear Phone ' . fake()->numberBetween(1, 10),
             'short_description' => fake()->text(200),
             'full_description' => fake()->text(500),
             'price' => fake()->numberBetween(300, 500),

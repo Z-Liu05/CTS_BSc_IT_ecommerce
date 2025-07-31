@@ -56,7 +56,7 @@ class StripeCheckoutSuccess
             $order->save();
 
             // @requires remove comment b4 demo
-            // User::find($user_id)->products()->detach();
+            User::find($user_id)->products()->detach();
 
             return true;
         }
