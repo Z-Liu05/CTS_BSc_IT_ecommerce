@@ -29,8 +29,8 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="rating">Prices (Greater Than):</label>
-                            <select class="form-control" id="rating" name="greater_than">
+                            <label for="max_price">Prices (Greater Than):</label>
+                            <select class="form-control" id="max_price" name="greater_than">
                                 <option value="0">All</option>
                                 <option value="300">Greater Than 300</option>
                                 <option value="400">Greater Than 400</option>

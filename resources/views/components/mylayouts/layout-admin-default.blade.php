@@ -79,7 +79,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
                             <a class="dropdown-item" href="{{ route('store.index') }}">Shop</a>
                             <a class="dropdown-item" href="{{ route('cart.index') }}">Cart</a>
-                            <a class="dropdown-item" href="#">Order History</a>
+                            <a class="dropdown-item" href="{{route('order-history.index')}}">Order History</a>
 
 
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -120,9 +120,6 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home.index') }}">Home</a></span>
-                        <span class="mr-2"><a href=#>Shop</span>
-                    </p>
                     <h1 class="mb-0 bread">{{ $title }}</h1>
                 </div>
             </div>
@@ -136,9 +133,6 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{ route('home.index') }}">Home</a></span>
-                        <span class="mr-2"><a href="{{ route('store.index') }}">Shop</span>
-                    </p>
                     <h1 class="mb-0 bread">Shop</h1>
                 </div>
             </div>

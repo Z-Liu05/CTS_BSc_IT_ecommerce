@@ -76,7 +76,10 @@ class User extends Authenticatable
     /**
      *  =============== FUNCTIONS  ===============.
      */
+    public function orders(): HasMany{
 
+        return $this->hasMany(Order::class);
+    }
     /**
      * Returns user's group.
      */

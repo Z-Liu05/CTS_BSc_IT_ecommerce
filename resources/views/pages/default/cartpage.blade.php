@@ -43,7 +43,7 @@
                                                     class="ion-ios-close"></span></button>
                                         </form>
 
-                                        {{-- <a href="#"><span class="ion-ios-close"></span></a> --}}
+                                        {{-- <a href="javascript:void(0)"><span class="ion-ios-close"></span></a> --}}
 
 
 

@@ -12,19 +12,20 @@
                     <h3>{{ $data->title }}</h3>
                     <div class="rating d-flex">
                         <p class="text-left mr-4">
-                            <a href="#" class="mr-2">5.0</a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                            <a href="javascript:void(0)" class="mr-2">5.0</a>
+                            <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                            <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                            <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                            <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                            <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
                         </p>
                         <p class="text-left mr-4">
-                            <a href="#" class="mr-2" style="color: #000;">100 <span
+                            <a href="javascript:void(0)" class="mr-2" style="color: #000;">100 <span
                                     style="color: #bbb;">Rating</span></a>
                         </p>
                         <p class="text-left">
-                            <a href="#" class="mr-2" style="color: #000;">500 <span style="color: #bbb;">Sold</span></a>
+                            <a href="javascript:void(0)" class="mr-2" style="color: #000;">500 <span
+                                    style="color: #bbb;">Sold</span></a>
                         </p>
                     </div>
                     <p class="price"><span>${{ $data->getPrice() }}</span></p>
@@ -142,7 +143,7 @@
                                                     <i class="ion-ios-star-outline"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </span>
-                                                <span class="text-right"><a href="#" class="reply"><i
+                                                <span class="text-right"><a href="javascript:void(0)" class="reply"><i
                                                             class="icon-reply"></i></a></span>
                                             </p>
                                             <p>When she reached the first hills of the Italic Mountains, she had a last
@@ -166,7 +167,7 @@
                                                     <i class="ion-ios-star-outline"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </span>
-                                                <span class="text-right"><a href="#" class="reply"><i
+                                                <span class="text-right"><a href="javascript:void(0)" class="reply"><i
                                                             class="icon-reply"></i></a></span>
                                             </p>
                                             <p>When she reached the first hills of the Italic Mountains, she had a last
@@ -190,7 +191,7 @@
                                                     <i class="ion-ios-star-outline"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </span>
-                                                <span class="text-right"><a href="#" class="reply"><i
+                                                <span class="text-right"><a href="javascript:void(0)" class="reply"><i
                                                             class="icon-reply"></i></a></span>
                                             </p>
                                             <p>When she reached the first hills of the Italic Mountains, she had a last
@@ -285,7 +286,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-3 ftco-animate d-flex fadeInUp ftco-animated">
                     <div class="product d-flex flex-column">
-                        <a href="#" class="img-prod"><img class="img-fluid"
+                        <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
                                 src="http://localhost:8000/storage/images/products/iphone1-4.jpg"
                                 alt="Colorlib Template">
                             <span class="status">50% Off</span>
@@ -298,11 +299,11 @@
                                 </div>
                                 <div class="rating">
                                     <p class="text-right mb-0">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
                                     </p>
                                 </div>
                             </div>
@@ -327,7 +328,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-3 ftco-animate d-flex fadeInUp ftco-animated">
                     <div class="product d-flex flex-column">
-                        <a href="#" class="img-prod"><img class="img-fluid"
+                        <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
                                 src="http://localhost:8000/storage/images/products/iphone1-4.jpg"
                                 alt="Colorlib Template">
                             <span class="status">50% Off</span>
@@ -340,11 +341,11 @@
                                 </div>
                                 <div class="rating">
                                     <p class="text-right mb-0">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
                                     </p>
                                 </div>
                             </div>
@@ -369,7 +370,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-3 ftco-animate d-flex fadeInUp ftco-animated">
                     <div class="product d-flex flex-column">
-                        <a href="#" class="img-prod"><img class="img-fluid"
+                        <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
                                 src="http://localhost:8000/storage/images/products/iphone1-4.jpg"
                                 alt="Colorlib Template">
                             <span class="status">50% Off</span>
@@ -382,11 +383,11 @@
                                 </div>
                                 <div class="rating">
                                     <p class="text-right mb-0">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
                                     </p>
                                 </div>
                             </div>
@@ -410,7 +411,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-3 ftco-animate d-flex fadeInUp ftco-animated">
                     <div class="product d-flex flex-column">
-                        <a href="#" class="img-prod"><img class="img-fluid"
+                        <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
                                 src="http://localhost:8000/storage/images/products/iphone1-4.jpg"
                                 alt="Colorlib Template">
                             <span class="status">50% Off</span>
@@ -423,11 +424,11 @@
                                 </div>
                                 <div class="rating">
                                     <p class="text-right mb-0">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
+                                        <a href="javascript:void(0)"><span class="ion-ios-star-outline"></span></a>
                                     </p>
                                 </div>
                             </div>

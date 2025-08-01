@@ -28,4 +28,10 @@ class Order extends Model
     {
         return $this->hasMany(OrderProduct::class, 'order_id');
     }
+
+    public function scopePaidOrders($query, $status = 'paid'){
+
+        $query->where('payment_status', $status);
+    }
+
 }

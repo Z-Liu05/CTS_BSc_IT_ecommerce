@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10 ftco-animate">
-                    <form action="#" class="billing-form">
+                    <form action="javascript:void(0)" class="billing-form">
                         <h3 class="mb-4 billing-heading">Billing Details</h3>
                         <div class="row align-items-end">
                             <div class="col-md-6">
@@ -169,7 +169,8 @@
                                 </div>
 
                                 <x-core.stripe-ui />
-                                {{-- <p><a href="#" class="btn btn-primary py-3 px-4">Place an order</a></p> --}}
+                                {{-- <p><a href="javascript:void(0)" class="btn btn-primary py-3 px-4">Place an
+                                        order</a></p> --}}
                             </div>
                         </div>
                     </div>

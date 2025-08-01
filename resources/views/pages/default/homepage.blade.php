@@ -85,8 +85,8 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
                             <div class="product d-flex flex-column">
-                                <a href="#" class="img-prod"><img class="img-fluid" src="{{ $data->getImage() }}"
-                                        alt="Colorlib Template">
+                                <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
+                                        src="{{ $data->getImage() }}" alt="Colorlib Template">
                                     <span class="status">50% Off</span>
                                     <div class="overlay"></div>
                                 </a>
@@ -97,11 +97,16 @@
                                         </div>
                                         <div class="rating">
                                             <p class="text-right mb-0">
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                                <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                                <a href="javascript:void(0)"><span
+                                                        class="ion-ios-star-outline"></span></a>
+                                                <a href="javascript:void(0)"><span
+                                                        class="ion-ios-star-outline"></span></a>
+                                                <a href="javascript:void(0)"><span
+                                                        class="ion-ios-star-outline"></span></a>
+                                                <a href="javascript:void(0)"><span
+                                                        class="ion-ios-star-outline"></span></a>
+                                                <a href="javascript:void(0)"><span
+                                                        class="ion-ios-star-outline"></span></a>
                                             </p>
                                         </div>
                                     </div>
@@ -145,7 +150,7 @@
                         <h2>Subcribe to our Newsletter</h2>
                         <div class="row d-flex justify-content-center mt-5">
                             <div class="col-md-8">
-                                <form action="#" class="subscribe-form">
+                                <form action="javascript:void(0)" class="subscribe-form">
                                     <div class="form-group d-flex">
                                         <input type="text" class="form-control" placeholder="Enter email address">
                                         <input type="submit" value="Subscribe" class="submit px-3">
