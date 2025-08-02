@@ -43,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 
+    Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
     Route::post('/checkout/points', [CheckoutController::class, 'points'])->name('checkout.points');

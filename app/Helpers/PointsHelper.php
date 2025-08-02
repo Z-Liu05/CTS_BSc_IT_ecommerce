@@ -54,19 +54,20 @@ class PointsHelper
             $points_exchanged = (int) $points_exchanged;
 
             if($points_exchanged > Auth::user()->total_points){
-                return 'You do not have enough points';
+                session()->flash('error', 'You do not have enough points.');
+                return;
             }
 
             $reward = PointsDiscount::where('points_needed', $points_exchanged)->first();
             session(['points_discount_applied'=> $reward->discount_percent]);
             session(['points_exchanged'=> $reward->points_needed]);
+            session()->flash('success', 'Discount Applied');
 
             return 'Discount Applied';
         } catch (\Throwable $th) {
             // throw $th;
             session()->forget('points_discount_applied');
             session()->forget('points_exchanged');
-            return 'Discount Removed';
         }
     }
 

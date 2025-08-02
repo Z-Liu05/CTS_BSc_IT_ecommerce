@@ -23,7 +23,6 @@
                             <div class="product d-flex flex-column">
                                 <a href="javascript:void(0)" class="img-prod"><img class="img-fluid"
                                         src="{{ $data->getImage() }}" alt="Colorlib Template">
-                                    <span class="status">50% Off</span>
                                     <div class="overlay"></div>
                                 </a>
                                 <div class="text py-3 pb-4 px-3">

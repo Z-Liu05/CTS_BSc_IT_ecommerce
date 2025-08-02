@@ -60,4 +60,26 @@ class CartController extends Controller
         // redirect user to the cart page
         return redirect()->route('cart.index')->with('message', 'Product added to cart');
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'quantity' => 'required|integer|min:1|max:20',
+        ]);
+
+        // Find the cart item belonging to the current user
+        $cartItem = Cart::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->first();
+
+        if (!$cartItem) {
+            return redirect()->route('cart.index')->with('error', 'Cart item not found.');
+        }
+
+        // Update the quantity
+        $cartItem->quantity = $request->quantity;
+        $cartItem->save();
+
+        return redirect()->route('cart.index')->with('message', 'Quantity updated.');
+    }
 }

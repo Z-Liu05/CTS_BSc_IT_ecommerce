@@ -4,6 +4,17 @@
 <div class="card p-3 my-3">
 
     <h4>Points</h4>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
     <hr>
     <p>Available Points: {{ $points_helper->getUserPoints() }}</p>
     <p>Points multiplier: x{{ $points_helper->getPoints()}}

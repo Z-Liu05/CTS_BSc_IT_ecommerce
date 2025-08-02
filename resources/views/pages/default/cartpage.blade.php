@@ -61,11 +61,14 @@
                                     <td class="price">${{ app('CustomHelper')->formatPrice($data->getPrice()) }}</td>
 
                                     <td class="quantity">
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="quantity"
-                                                class="quantity form-control input-number"
-                                                value="{{ $data->pivot->quantity }}" min="1" max="20">
-                                        </div>
+                                        <form action="{{ route('cart.update', ['id' => $data->pivot->id]) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                            <input type="number" name="quantity" class="form-control input-number"
+                                                value="{{ $data->pivot->quantity }}" min="1" max="20"
+                                                onkeydown="if(event.key === 'Enter'){ this.form.submit(); }">
+                                        </form>
                                     </td>
 
                                     <td class="total">${{

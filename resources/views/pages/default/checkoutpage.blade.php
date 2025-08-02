@@ -130,6 +130,10 @@
                                     You saved ${{
                                     app('CustomHelper')->formatPrice($points_helper->getPointsDiscountApplied()) }}!
                                 </p>
+                                @elseif ($points_helper->getPointsExhanged() > $points_helper->getUserPoints())
+                                <p class="text-danger mt-2">
+                                    <strong>Error:</strong> You do not have enough points to apply this discount.
+                                </p>
                                 @endif
                             </div>
                         </div>
