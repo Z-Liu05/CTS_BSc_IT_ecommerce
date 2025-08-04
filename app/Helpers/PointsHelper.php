@@ -50,26 +50,39 @@ class PointsHelper
     public static function exchangePoints($points_exchanged)
     {
         try {
-
             $points_exchanged = (int) $points_exchanged;
 
-            if($points_exchanged > Auth::user()->total_points){
-                session()->flash('error', 'You do not have enough points.');
+            // Always clear previous discount
+            self::clearPointsSession();
+
+            if ($points_exchanged <= 0) {
+                session()->flash('error', 'Invalid point selection.');
+                return;
+            }
+
+            if ($points_exchanged > Auth::user()->total_points) {
+                session()->flash('error', 'You do not have enough points for this discount.');
                 return;
             }
 
             $reward = PointsDiscount::where('points_needed', $points_exchanged)->first();
-            session(['points_discount_applied'=> $reward->discount_percent]);
-            session(['points_exchanged'=> $reward->points_needed]);
+
+            if (!$reward) {
+                session()->flash('error', 'Discount not found for the selected points.');
+                return;
+            }
+
+            session(['points_discount_applied' => $reward->discount_percent]);
+            session(['points_exchanged' => $reward->points_needed]);
             session()->flash('success', 'Discount Applied');
 
             return 'Discount Applied';
         } catch (\Throwable $th) {
-            // throw $th;
-            session()->forget('points_discount_applied');
-            session()->forget('points_exchanged');
+            self::clearPointsSession();
+            session()->flash('error', 'An error occurred while applying the discount.');
         }
     }
+
 
     public static function clearPointsSession()
     {
