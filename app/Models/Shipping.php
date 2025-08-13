@@ -12,7 +12,7 @@ class Shipping extends Model
     use HasFactory;
 
     protected $table = 'shipping';
-
+    protected $guarded = [];
     /**
      * The groups that belong to the Shipping.
      */

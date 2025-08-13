@@ -25,4 +25,8 @@ class Group extends Model
     {
         $query->whereIn('id', $group_ids);
     }
+
+    protected $fillable = [
+        'title',
+    ];
 }
