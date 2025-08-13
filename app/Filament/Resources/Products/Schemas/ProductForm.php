@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Products\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -18,7 +20,7 @@ class ProductForm
                 Textarea::make('short_description')
                     ->required()
                     ->columnSpanFull(),
-                Textarea::make('full_description')
+                RichEditor::make('full_description')
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('price')
@@ -30,20 +32,31 @@ class ProductForm
                     ->required()
                     ->numeric()
                     ->default(20),
-                FileUpload::make('image_path')
-                    ->image()
-                    ->required(),
                 FileUpload::make('image_name')
                     ->image()
+                    ->disk('products')
                     ->required(),
-                TextInput::make('category')
-                    ->required(),
-                TextInput::make('classification')
+                Select::make('category')
                     ->required()
-                    ->default('default'),
-                TextInput::make('status')
+                    ->options([
+                        'white' => 'White',
+                        'black' => 'Black',
+                        'gold' => 'Gold',
+                        'silver' => 'Silver',
+                    ]),
+                Select::make('classification')
                     ->required()
-                    ->default('active'),
+                    ->options([
+                        'default' => 'Default',
+                        'exclusivee' => 'Exclusive',
+                        'featured' => 'Featured',
+                        'upcoming' => 'Upcoming',
+                    ]),
+                Select::make('status')
+                    ->required()->options([
+                        'active' => 'Active',
+                        'inactive' => 'Inactive',
+                    ]),
             ]);
     }
 }

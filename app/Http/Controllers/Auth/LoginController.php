@@ -31,7 +31,7 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user){
         if(Auth::user()->role == 'admin'){
-            return redirect()->route('admin.products.index')->with('message', 'Welcome to the admin dashboard');
+            return redirect('/admindash')->with('message', 'Welcome to the admin dashboard');
         }else{
             return redirect()->route('home')->with('message', 'Welcome');
         }

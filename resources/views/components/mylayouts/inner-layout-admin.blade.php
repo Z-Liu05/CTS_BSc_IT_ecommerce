@@ -1,6 +1,6 @@
 <div class="container mt-3 mb-11">
     <div class="card p-2">
-        <span><a href="{{ route('admin.dashboard.index') }}">Dashboard</a> / </span>
+        <span><a href="{{ url('/admindash') }}">Dashboard</a> / </span>
     </div>
 </div>
 

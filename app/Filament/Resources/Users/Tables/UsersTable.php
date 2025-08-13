@@ -3,10 +3,13 @@
 namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class UsersTable
 {
@@ -21,9 +24,13 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
+                IconColumn::make('email_verified_at')
+                    ->state(fn(Model $record) =>(bool) $record->email_verified_at)
+                    ->icon(
+                        function (Model $record){
+                        return !empty($record->email_verified_at)? 'heroicon-o-check-circle' : null;
+                    }
+                ),
                 TextColumn::make('total_points')
                     ->numeric()
                     ->sortable(),
@@ -41,6 +48,7 @@ class UsersTable
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -99,4 +99,9 @@ class User extends Authenticatable
         $query->where('id', $user_id)
         ->increment('total_points', $points);
     }
+
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        return $this->role === 'admin';
+    }
 }

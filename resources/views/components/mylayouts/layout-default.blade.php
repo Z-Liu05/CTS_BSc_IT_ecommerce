@@ -91,7 +91,7 @@
 
                     @auth
                     @if(Auth::user()->role == 'admin')
-                    <li class="nav-item"><a href="{{ route('admin.products.index') }}" class="nav-link">Dashboard</a>
+                    <li class="nav-item"><a href="{{ url('/admindash') }}" class="nav-link">Dashboard</a>
                     </li>
                     @endif
                     @endauth

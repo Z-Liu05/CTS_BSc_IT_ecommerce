@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Model;
 
 class ProductsTable
 {
@@ -16,15 +17,19 @@ class ProductsTable
         return $table
             ->columns([
                 TextColumn::make('title')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('price')
                     ->money()
                     ->sortable(),
                 TextColumn::make('quantity')
                     ->numeric()
                     ->sortable(),
-                ImageColumn::make('image_path'),
-                ImageColumn::make('image_name'),
+                ImageColumn::make('Image')
+                ->state(
+                    fn (Model $record)=> $record->getImage())
+                    ->width(50),
+
                 TextColumn::make('category')
                     ->searchable(),
                 TextColumn::make('classification')
